@@ -30,6 +30,70 @@
 
 @implementation ViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.animateStep=0;
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+
+    self.gradientLayer = [CAGradientLayer layer];
+    self.gradientLayer.frame = self.view.bounds;
+
+    
+    self.firstLocation=[NSNumber numberWithFloat:-0.2];
+    self.secondLocation=[NSNumber numberWithFloat:0.5];
+    self.thirdLocation=[NSNumber numberWithFloat:1.3];
+//
+    self.firstColor =  [UIColor colorWithRed:255/255.0f green:0/255.0f blue:0/255.0f alpha:0.6f];
+    self.secondColor = [UIColor colorWithRed:255/255.0f green:150/255.0f blue:0/255.0f alpha:0.7f];
+    self.thirdColor = [UIColor colorWithRed:255/255.0f green:200/255.0f blue:0/255.0f alpha:0.7f];
+    
+//    self.firstColor =  [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.1f];
+//    self.secondColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.25f];
+//    self.thirdColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.1f];
+    
+//    UIColor *fourthColor = [UIColor greenColor];
+//    UIColor *fifthColor = [UIColor blueColor];
+//    UIColor *sixthColor = [UIColor purpleColor];
+//    self.gradientLayer.colors= [NSArray arrayWithObjects:(id)firstColor.CGColor, (id)secondColor.CGColor,(id)thirdColor.CGColor,(id)fourthColor.CGColor,(id)fifthColor.CGColor, (id)sixthColor.CGColor, nil];
+    self.gradientLayer.colors= [NSArray arrayWithObjects:(id)self.firstColor.CGColor, (id)self.secondColor.CGColor,(id)self.thirdColor.CGColor, nil];
+    
+    self.gradientLayer.startPoint = CGPointMake(0, 0);
+    self.gradientLayer.endPoint = CGPointMake(1, 1);
+    
+   
+    
+    self.gradientLayer.locations = [NSArray arrayWithObjects:self.firstLocation, self.secondLocation, self.thirdLocation, nil];
+    
+
+    self.view.backgroundColor= [UIColor whiteColor];
+    [self.view.layer addSublayer:self.gradientLayer];
+
+    
+    if([self.motionManager isAccelerometerAvailable]) {
+        [self.motionManager startAccelerometerUpdatesToQueue:[[NSOperationQueue alloc] init] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+            if(accelerometerData.acceleration.x >0.1){
+                NSString *accelerationDirection=@"right";
+                [self adjustLocation:accelerationDirection];
+            } else if(accelerometerData.acceleration.x <-0.1){
+                NSString *accelerationDirection=@"left";
+                [self adjustLocation:accelerationDirection];
+            }
+ 
+        }];
+    }
+    
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(shiftLocations) userInfo:nil repeats:YES];
+    
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(shiftLocations) userInfo:nil repeats:YES];
+    
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(pickColors) userInfo:nil repeats:YES];
+    
+//    [timer fire];
+    // Do any additional setup after loading the view.
+}
+
+
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
 //    self.animateStep=0;
@@ -38,104 +102,38 @@
 //    // Do any additional setup after loading the view, typically from a nib.
 //    self.gradientLayer = [CAGradientLayer layer];
 //    self.gradientLayer.frame = self.view.bounds;
-////    self.firstLocation=[NSNumber numberWithFloat:0.0];
-////    self.secondLocation=[NSNumber numberWithFloat:0.1];
-////    self.thirdLocation=[NSNumber numberWithFloat:1.0];
+//    //    self.firstLocation=[NSNumber numberWithFloat:0.0];
+//    //    self.secondLocation=[NSNumber numberWithFloat:0.1];
+//    //    self.thirdLocation=[NSNumber numberWithFloat:1.0];
 //    
 //    self.firstLocation=[NSNumber numberWithFloat:0.1];
 //    self.secondLocation=[NSNumber numberWithFloat:0.5];
 //    self.thirdLocation=[NSNumber numberWithFloat:0.9];
 //    
-//    self.firstColor =  [UIColor colorWithRed:255/255.0f green:0/255.0f blue:0/255.0f alpha:0.6f];
-//    self.secondColor = [UIColor colorWithRed:255/255.0f green:150/255.0f blue:0/255.0f alpha:0.7f];
-//    self.thirdColor = [UIColor colorWithRed:255/255.0f green:200/255.0f blue:0/255.0f alpha:0.7f];
+//    self.firstColor =  [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:0.6f];
+//    self.secondColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.7f];
 //    
-////    self.firstColor =  [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.1f];
-////    self.secondColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.25f];
-////    self.thirdColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.1f];
-//    
-////    UIColor *fourthColor = [UIColor greenColor];
-////    UIColor *fifthColor = [UIColor blueColor];
-////    UIColor *sixthColor = [UIColor purpleColor];
-////    self.gradientLayer.colors= [NSArray arrayWithObjects:(id)firstColor.CGColor, (id)secondColor.CGColor,(id)thirdColor.CGColor,(id)fourthColor.CGColor,(id)fifthColor.CGColor, (id)sixthColor.CGColor, nil];
-//    self.gradientLayer.colors= [NSArray arrayWithObjects:(id)self.firstColor.CGColor, (id)self.secondColor.CGColor,(id)self.thirdColor.CGColor, nil];
+//   
+//    self.gradientLayer.colors= [NSArray arrayWithObjects:(id)self.firstColor.CGColor, (id)self.secondColor.CGColor, nil];
 //    
 //    self.gradientLayer.startPoint = CGPointMake(0, 0);
 //    self.gradientLayer.endPoint = CGPointMake(1, 1);
 //    
-//   
+//    
 //    
 //    self.gradientLayer.locations = [NSArray arrayWithObjects:self.firstLocation, self.secondLocation, self.thirdLocation, nil];
 //    
-//
+//    
 //    self.view.backgroundColor= [UIColor whiteColor];
 //    [self.view.layer addSublayer:self.gradientLayer];
-//
 //    
-////    if([self.motionManager isAccelerometerAvailable]) {
-////        [self.motionManager startAccelerometerUpdatesToQueue:[[NSOperationQueue alloc] init] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-////            if(accelerometerData.acceleration.x >0.1){
-////                NSString *accelerationDirection=@"right";
-////                [self adjustLocation:accelerationDirection];
-////            } else if(accelerometerData.acceleration.x <-0.1){
-////                NSString *accelerationDirection=@"left";
-////                [self adjustLocation:accelerationDirection];
-////            }
-//// 
-////        }];
-////    }
+//    
 //    
 //    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(shiftLocationsAndColors) userInfo:nil repeats:YES];
 //    
-////    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(shiftLocations) userInfo:nil repeats:YES];
-//    
-////    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(pickColors) userInfo:nil repeats:YES];
-//    
 //    [timer fire];
-//    // Do any additional setup after loading the view.
+//
 //}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.animateStep=0;
-    
-    self.motionManager = [[CMMotionManager alloc] init];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.gradientLayer = [CAGradientLayer layer];
-    self.gradientLayer.frame = self.view.bounds;
-    //    self.firstLocation=[NSNumber numberWithFloat:0.0];
-    //    self.secondLocation=[NSNumber numberWithFloat:0.1];
-    //    self.thirdLocation=[NSNumber numberWithFloat:1.0];
-    
-    self.firstLocation=[NSNumber numberWithFloat:0.1];
-    self.secondLocation=[NSNumber numberWithFloat:0.5];
-    self.thirdLocation=[NSNumber numberWithFloat:0.9];
-    
-    self.firstColor =  [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:0.6f];
-    self.secondColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.7f];
-    
-   
-    self.gradientLayer.colors= [NSArray arrayWithObjects:(id)self.firstColor.CGColor, (id)self.secondColor.CGColor, nil];
-    
-    self.gradientLayer.startPoint = CGPointMake(0, 0);
-    self.gradientLayer.endPoint = CGPointMake(1, 1);
-    
-    
-    
-    self.gradientLayer.locations = [NSArray arrayWithObjects:self.firstLocation, self.secondLocation, self.thirdLocation, nil];
-    
-    
-    self.view.backgroundColor= [UIColor whiteColor];
-    [self.view.layer addSublayer:self.gradientLayer];
-    
-    
-    
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(shiftLocationsAndColors) userInfo:nil repeats:YES];
-    
-    [timer fire];
-
-}
 
 
 -(void) shiftLocationsAndColors {
@@ -164,14 +162,14 @@
 }
 
 -(void) shiftLocations {
-    self.firstLocation=[NSNumber numberWithFloat:0.0];
+    self.firstLocation=[NSNumber numberWithFloat:-0.2];
     self.secondLocation=[NSNumber numberWithFloat:0.1];
-    self.thirdLocation=[NSNumber numberWithFloat:1.0];
+    self.thirdLocation=[NSNumber numberWithFloat:1.3];
     self.gradientLayer.startPoint = CGPointMake(0, 0.0);
     self.gradientLayer.endPoint = CGPointMake(0, 1.0);
-    self.firstColor =  [UIColor colorWithRed:120/255.0f green:200/255.0f blue:251/255.0f alpha:1.0f];
-    self.secondColor = [UIColor colorWithRed:77/255.0f green:186/255.0f blue:225/255.0f alpha:1.0f];
-    self.thirdColor = [UIColor colorWithRed:50/255.0f green:140/255.0f blue:246/255.0f alpha:1.0f];
+    self.firstColor =  [UIColor colorWithRed:50/255.0f green:255/255.0f blue:251/255.0f alpha:1.0f];
+    self.secondColor = [UIColor colorWithRed:50/255.0f green:186/255.0f blue:225/255.0f alpha:1.0f];
+    self.thirdColor = [UIColor colorWithRed:50/255.0f green:100/255.0f blue:246/255.0f alpha:1.0f];
     self.gradientLayer.colors=[NSArray arrayWithObjects:(id)self.firstColor.CGColor, (id)self.secondColor.CGColor,(id)self.thirdColor.CGColor, nil];
 
     NSArray *locations = [[NSArray alloc] init];
@@ -259,7 +257,7 @@
     
     animation.fromValue             = fromLocations;
     animation.toValue               = toLocations;
-    animation.duration              = 3.0;
+    animation.duration              = 0.1;
     animation.removedOnCompletion   = YES;
     animation.fillMode              = kCAFillModeForwards;
     animation.timingFunction        = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];

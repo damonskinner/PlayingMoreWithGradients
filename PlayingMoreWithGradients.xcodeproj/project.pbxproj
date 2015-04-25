@@ -15,9 +15,15 @@
 		362BF9321AC3249300B65EF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362BF9301AC3249300B65EF7 /* LaunchScreen.xib */; };
 		362BF93E1AC3249400B65EF7 /* PlayingMoreWithGradientsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 362BF93D1AC3249400B65EF7 /* PlayingMoreWithGradientsTests.m */; };
 		362BF9481AC33FBB00B65EF7 /* beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 362BF9471AC33FBB00B65EF7 /* beach.png */; };
+		36B4B0981AEBD70400B3DA85 /* UIColor+SampleColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B4B0971AEBD70400B3DA85 /* UIColor+SampleColors.m */; };
+		36D8B9DC1AEBD03A00644455 /* GradientsTabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D8B9DB1AEBD03A00644455 /* GradientsTabBarControllerViewController.m */; };
+		36D8B9DF1AEBD06400644455 /* AnimatedColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D8B9DE1AEBD06400644455 /* AnimatedColorsViewController.m */; };
+		36D8B9E21AEBD08A00644455 /* AnimatedLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D8B9E11AEBD08A00644455 /* AnimatedLocationsViewController.m */; };
+		36D8B9E51AEBD0AE00644455 /* AccelerometerGradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D8B9E41AEBD0AE00644455 /* AccelerometerGradientViewController.m */; };
 		36E11A371AC43E36007A8CD8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E11A361AC43E36007A8CD8 /* CoreMotion.framework */; };
 		36E11A391AC44804007A8CD8 /* plateMetal.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E11A381AC44804007A8CD8 /* plateMetal.png */; };
 		36E11A3B1AC44987007A8CD8 /* metal-plate.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E11A3A1AC44987007A8CD8 /* metal-plate.png */; };
+		99691356EE82E895DBD6D480 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C998618E975656A07EACAC3F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +51,22 @@
 		362BF93C1AC3249400B65EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		362BF93D1AC3249400B65EF7 /* PlayingMoreWithGradientsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingMoreWithGradientsTests.m; sourceTree = "<group>"; };
 		362BF9471AC33FBB00B65EF7 /* beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beach.png; sourceTree = SOURCE_ROOT; };
+		36B4B0961AEBD70400B3DA85 /* UIColor+SampleColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SampleColors.h"; sourceTree = "<group>"; };
+		36B4B0971AEBD70400B3DA85 /* UIColor+SampleColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SampleColors.m"; sourceTree = "<group>"; };
+		36D8B9DA1AEBD03A00644455 /* GradientsTabBarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientsTabBarControllerViewController.h; sourceTree = "<group>"; };
+		36D8B9DB1AEBD03A00644455 /* GradientsTabBarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientsTabBarControllerViewController.m; sourceTree = "<group>"; };
+		36D8B9DD1AEBD06400644455 /* AnimatedColorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedColorsViewController.h; sourceTree = "<group>"; };
+		36D8B9DE1AEBD06400644455 /* AnimatedColorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedColorsViewController.m; sourceTree = "<group>"; };
+		36D8B9E01AEBD08A00644455 /* AnimatedLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedLocationsViewController.h; sourceTree = "<group>"; };
+		36D8B9E11AEBD08A00644455 /* AnimatedLocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedLocationsViewController.m; sourceTree = "<group>"; };
+		36D8B9E31AEBD0AE00644455 /* AccelerometerGradientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerometerGradientViewController.h; sourceTree = "<group>"; };
+		36D8B9E41AEBD0AE00644455 /* AccelerometerGradientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerometerGradientViewController.m; sourceTree = "<group>"; };
 		36E11A361AC43E36007A8CD8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		36E11A381AC44804007A8CD8 /* plateMetal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plateMetal.png; sourceTree = SOURCE_ROOT; };
 		36E11A3A1AC44987007A8CD8 /* metal-plate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "metal-plate.png"; sourceTree = SOURCE_ROOT; };
+		9E5087403262878CEBC79CC4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C998618E975656A07EACAC3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF85629EAA3EFAFF39185701 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36E11A371AC43E36007A8CD8 /* CoreMotion.framework in Frameworks */,
+				99691356EE82E895DBD6D480 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,10 +92,22 @@
 		362BF9151AC3249300B65EF7 = {
 			isa = PBXGroup;
 			children = (
+				36B4B0961AEBD70400B3DA85 /* UIColor+SampleColors.h */,
+				36B4B0971AEBD70400B3DA85 /* UIColor+SampleColors.m */,
+				36D8B9E31AEBD0AE00644455 /* AccelerometerGradientViewController.h */,
+				36D8B9E41AEBD0AE00644455 /* AccelerometerGradientViewController.m */,
+				36D8B9E01AEBD08A00644455 /* AnimatedLocationsViewController.h */,
+				36D8B9E11AEBD08A00644455 /* AnimatedLocationsViewController.m */,
+				36D8B9DD1AEBD06400644455 /* AnimatedColorsViewController.h */,
+				36D8B9DE1AEBD06400644455 /* AnimatedColorsViewController.m */,
+				36D8B9DA1AEBD03A00644455 /* GradientsTabBarControllerViewController.h */,
+				36D8B9DB1AEBD03A00644455 /* GradientsTabBarControllerViewController.m */,
 				36E11A361AC43E36007A8CD8 /* CoreMotion.framework */,
 				362BF9201AC3249300B65EF7 /* PlayingMoreWithGradients */,
 				362BF93A1AC3249300B65EF7 /* PlayingMoreWithGradientsTests */,
 				362BF91F1AC3249300B65EF7 /* Products */,
+				A6AA919CAD2B7686B5529686 /* Pods */,
+				DB96365A282400D379AD2155 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +164,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A6AA919CAD2B7686B5529686 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E5087403262878CEBC79CC4 /* Pods.debug.xcconfig */,
+				EF85629EAA3EFAFF39185701 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB96365A282400D379AD2155 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C998618E975656A07EACAC3F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 362BF9411AC3249400B65EF7 /* Build configuration list for PBXNativeTarget "PlayingMoreWithGradients" */;
 			buildPhases = (
+				F15FD9FD85A82A8760AE5B2A /* Check Pods Manifest.lock */,
 				362BF91A1AC3249300B65EF7 /* Sources */,
 				362BF91B1AC3249300B65EF7 /* Frameworks */,
 				362BF91C1AC3249300B65EF7 /* Resources */,
+				B20D63A0B77BCF59889D65B9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,12 +281,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B20D63A0B77BCF59889D65B9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F15FD9FD85A82A8760AE5B2A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		362BF91A1AC3249300B65EF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D8B9DF1AEBD06400644455 /* AnimatedColorsViewController.m in Sources */,
+				36D8B9DC1AEBD03A00644455 /* GradientsTabBarControllerViewController.m in Sources */,
+				36D8B9E21AEBD08A00644455 /* AnimatedLocationsViewController.m in Sources */,
+				36D8B9E51AEBD0AE00644455 /* AccelerometerGradientViewController.m in Sources */,
 				362BF92A1AC3249300B65EF7 /* ViewController.m in Sources */,
+				36B4B0981AEBD70400B3DA85 /* UIColor+SampleColors.m in Sources */,
 				362BF9271AC3249300B65EF7 /* AppDelegate.m in Sources */,
 				362BF9241AC3249300B65EF7 /* main.m in Sources */,
 			);
@@ -357,9 +446,11 @@
 		};
 		362BF9421AC3249400B65EF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E5087403262878CEBC79CC4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlayingMoreWithGradients/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -367,9 +458,11 @@
 		};
 		362BF9431AC3249400B65EF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF85629EAA3EFAFF39185701 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlayingMoreWithGradients/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
