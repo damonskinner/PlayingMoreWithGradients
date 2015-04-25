@@ -14,6 +14,12 @@
 
 @interface GradientsTabBarControllerViewController ()
 
+
+- (AnimatedLocationsViewController *)makeLocationsVC;
+- (AnimatedColorsViewController *)makeColorsVC;
+- (AccelerometerGradientViewController *)makeAccelerometerVC;
+
+
 @end
 
 @implementation GradientsTabBarControllerViewController
@@ -29,6 +35,12 @@
     
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+
+#pragma -mark SetupChildViewControllers
 
 - (AnimatedLocationsViewController *)makeLocationsVC {
     AnimatedLocationsViewController *locationsExampleVC = [[AnimatedLocationsViewController alloc]init];
@@ -45,7 +57,7 @@
     AnimatedColorsViewController *colorsExampleVC = [[AnimatedColorsViewController alloc]init];
     
     UIImage *colorsExampleImage = [[FAKFontAwesome arrowsHIconWithSize:20] imageWithSize:CGSizeMake(30, 30)];
-    colorsExampleVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Locations" image:colorsExampleImage tag:1];
+    colorsExampleVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Colors" image:colorsExampleImage tag:1];
     
     return colorsExampleVC;
 }
@@ -63,18 +75,8 @@
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end
